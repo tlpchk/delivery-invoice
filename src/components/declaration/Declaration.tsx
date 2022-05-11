@@ -1,14 +1,8 @@
-import { Page, Document, StyleSheet, Font, Text } from '@react-pdf/renderer';
+import { Page, Document, StyleSheet, Text } from '@react-pdf/renderer';
 import { english } from '../../data/dictionary';
 import { DeclarationData } from '../../store/declaration/types';
 import ReceiverSection from './ReceiverSection';
 import SenderSection from './SenderSection';
-
-Font.register({
-    family: "Roboto",
-    src:
-        "https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-medium-webfont.ttf"
-});
 
 const styles = StyleSheet.create({
     page: {

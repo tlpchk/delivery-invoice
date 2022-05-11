@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Grid, Paper, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import _ from "lodash";
 import { useState } from "react";
 import { english } from "../../data/dictionary";
@@ -36,28 +36,27 @@ export const DeclarationForm = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    dispatch(setData(formValues))
+    dispatch(setData(formValues));
   };
 
   return (
-    <Paper sx={{ p: 2 }}>
+    <Box sx={{ p: 2}}>
       <Typography variant="h4">{english["declarationTitle"]}</Typography>
       <form onSubmit={handleSubmit}>
         <Grid container
           direction="row"
-          justifyContent="center"
+          justifyContent="space-around"
           alignItems="center"
           sx={{ pt: 2 }}
+          columns={{ xs: 1, sm: 2 }}
         >
-          <Grid item>
+          <Grid item xs={1} sm={1}>
             <SenderFormPart
               formValues={formValues.sender}
               handleChange={handleInputChange} />
           </Grid>
 
-          <Divider orientation="vertical" flexItem sx={{ ml: 4, mr: 4 }} />
-
-          <Grid item>
+          <Grid item xs={1} sm={1}>
             <ReceiverFormPart
               formValues={formValues.receiver}
               handleChange={handleInputChange} />
@@ -69,6 +68,6 @@ export const DeclarationForm = () => {
           </Button>
         </Box>
       </form>
-    </Paper>
+    </Box>
   );
 };

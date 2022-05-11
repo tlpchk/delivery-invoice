@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import DeclarationView from './components/declaration/DeclarationView';
+import DeclarationWrapper from './components/declaration/DeclarationWrapper';
 import { DeclarationForm } from './components/form/DeclarationForm';
 
 function App() {
@@ -7,14 +7,12 @@ function App() {
     <Grid
       container
       direction="column"
-      justifyContent="center"
-      alignItems="center"
     >
       <Grid item>
         <DeclarationForm />
       </Grid>
       <Grid item>
-        <DeclarationView />
+        <DeclarationWrapper />
       </Grid>
     </Grid>
   );

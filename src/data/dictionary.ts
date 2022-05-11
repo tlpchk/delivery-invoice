@@ -10,6 +10,8 @@ export const english: Dictionary = {
     "receiver": "Receiver",
     "from" : "From",
     "to" : "To",
+    "loadingInvoice": "Loading...",
+    "download": "Download",
 
     "name": "Last name, First name",
     "postalAdministration": "Postal administration",
