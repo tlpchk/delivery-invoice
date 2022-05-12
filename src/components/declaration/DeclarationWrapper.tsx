@@ -1,6 +1,6 @@
 import { Box, Button } from "@mui/material";
 import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
-import { english } from "../../data/dictionary";
+import { useTranslation } from "react-i18next"
 import { useAppSelector } from "../../store/hooks";
 import Declaration from "./Declaration";
 import { useCyrilicFonts, useScrollToTheBottom } from "./declarationHooks";
@@ -8,11 +8,12 @@ import { useCyrilicFonts, useScrollToTheBottom } from "./declarationHooks";
 
 const DeclarationWrapper = () => {
     const { isPopulated, data } = useAppSelector((state) => state.declaration)
+    const { t } = useTranslation()
     useCyrilicFonts()
     useScrollToTheBottom(isPopulated)
 
     const Doc = <Declaration {...data} />
-    
+
     return isPopulated ? (
         <>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }} textAlign="center">
@@ -24,7 +25,7 @@ const DeclarationWrapper = () => {
                 <PDFDownloadLink document={Doc}>
                     {({ blob, url, loading, error }) => (
                         <Button disabled={loading} variant="outlined" >
-                            {loading ? english["loadingInvoice"] : english["download"]}
+                            {loading ? t("loadingInvoice") : t("download")}
                         </Button>)}
                 </PDFDownloadLink>
             </Box>

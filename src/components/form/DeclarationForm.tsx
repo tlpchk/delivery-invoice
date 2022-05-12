@@ -1,10 +1,11 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
 import _ from "lodash";
 import { useState } from "react";
-import { english } from "../../data/dictionary";
+import { useTranslation } from "react-i18next"
 import { setData } from "../../store/declaration/declarationSlice";
 import { DeclarationFormData } from "../../store/declaration/types";
 import { useAppDispatch } from "../../store/hooks";
+import DeclarationHeader from "./DeclarationHeader";
 import ReceiverFormPart from "./ReceiverFormPart";
 import SenderFormPart from "./SenderFormPart";
 
@@ -17,10 +18,13 @@ const defaultValues: DeclarationFormData = {
     tel: "123 213 321"
   },
   receiver: {
-    name: "Danil Berezovski",
-    streetAndBuilding: "Somewhere in Italy, 3/3",
+    name: "Даніл Березовський",
+    streetAndBuilding: "Десь в Італії, 3/3",
     postCode: "4213",
-    city: "Milan",
+    city: "Якесь місто",
+    district: "Якась область",
+    region: "Якийсь район",
+    country: "Україна",
     tel: "912 231 123"
   }
 };
@@ -28,6 +32,7 @@ const defaultValues: DeclarationFormData = {
 export const DeclarationForm = () => {
   const [formValues, setFormValues] = useState(defaultValues);
   const dispatch = useAppDispatch()
+  const {t} = useTranslation()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -40,13 +45,13 @@ export const DeclarationForm = () => {
   };
 
   return (
-    <Box sx={{ p: 2}}>
-      <Typography variant="h4">{english["declarationTitle"]}</Typography>
+    <Box sx={{ p: 2 }}>
+      <DeclarationHeader></DeclarationHeader>
       <form onSubmit={handleSubmit}>
         <Grid container
           direction="row"
           justifyContent="space-around"
-          alignItems="center"
+          alignItems="start"
           sx={{ pt: 2 }}
           columns={{ xs: 1, sm: 2 }}
         >
@@ -64,7 +69,7 @@ export const DeclarationForm = () => {
         </Grid>
         <Box textAlign="center">
           <Button variant={"contained"} type="submit">
-            {english["submit"]}
+            {t("submit")}
           </Button>
         </Box>
       </form>

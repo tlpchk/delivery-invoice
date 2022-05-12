@@ -12,7 +12,7 @@ export const english: Dictionary = {
     "to" : "To",
     "loadingInvoice": "Loading...",
     "download": "Download",
-
+    
     "name": "Last name, First name",
     "postalAdministration": "Postal administration",
     "company": "Company (firm)",
@@ -20,11 +20,21 @@ export const english: Dictionary = {
     "postCode": "Postcode",
     "country": "Country",
     "city": "City",
+    "region": "Region",
+    "district": "District",
     "tel" : "Tel.",
     "senderRef": "Sender's customs reference (if any)",
 }
 
 export const ukrainian: Dictionary = {
+    "declarationTitle": "Бланк накладної",
+    "submit": "Далі",
+    "sender": "Відправник",
+    "receiver": "Отримувач",
+    "loadingInvoice": "Обробка...",
+    "download": "Завантажити",
+
+
     "name": "Прізвище, ім’я",
     "postalAdministration": "Поштова адміністрація",
     "company": "Компанія/Фірма",
@@ -33,11 +43,7 @@ export const ukrainian: Dictionary = {
     "country": "Країна",
     "tel" : "Тел.",
     "city": "Місто",
+    "region": "Район",
+    "district": "Область",
     "senderRef": "Митне посилання відправлення"
-}
-
-
-export const languages = {
-    "EN": english,
-    "UA": ukrainian
 }

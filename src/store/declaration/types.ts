@@ -11,6 +11,9 @@ export interface ReceiverFormData {
     streetAndBuilding: string
     postCode: string
     city: string
+    region: string
+    district: string
+    country: string
     tel: string
 }
 
@@ -22,7 +25,6 @@ export interface SenderData extends SenderFormData {
 
 export interface ReceiverData extends ReceiverFormData{
     company: string
-    country: string
 }
 
 export interface DeclarationFormData {

@@ -16,7 +16,7 @@ export const useCyrilicFonts = () => (useEffect(() => {
     loadFonts()
 }, []))
 
-export const useScrollToTheBottom = (bool: boolean) => useEffect(() => {
+export const useScrollToTheBottom = (bool: boolean = true) => useEffect(() => {
     if (bool) {
         window.scrollTo({
             top: document.body.scrollHeight,

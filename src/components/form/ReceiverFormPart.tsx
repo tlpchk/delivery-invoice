@@ -1,5 +1,5 @@
 import { Grid, styled, TextField, Typography } from "@mui/material"
-import { english } from "../../data/dictionary"
+import { useTranslation } from "react-i18next"
 import { ReceiverFormData } from "../../store/declaration/types"
 
 interface ReceiverFormPartProps {
@@ -12,17 +12,19 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
 }));
 
 const ReceiverFormPart = ({ formValues, handleChange }: ReceiverFormPartProps) => {
+    const { t } = useTranslation()
+
     return (<Grid
         container
         direction="column"
         justifyContent="center"
         alignItems="left"
     >
-        <Typography variant="h6">{english["receiver"]}</Typography>
+        <Typography variant="h6">{t("receiver")}</Typography>
 
         <StyledTextField
             name="receiver.name"
-            label={english["name"]}
+            label={t("name")}
             type="text"
             value={formValues.name}
             onChange={handleChange}
@@ -30,7 +32,7 @@ const ReceiverFormPart = ({ formValues, handleChange }: ReceiverFormPartProps) =
 
         <StyledTextField
             name="receiver.streetAndBuilding"
-            label={english["streetAndBuilding"]}
+            label={t("streetAndBuilding")}
             type="text"
             value={formValues.streetAndBuilding}
             onChange={handleChange}
@@ -39,7 +41,7 @@ const ReceiverFormPart = ({ formValues, handleChange }: ReceiverFormPartProps) =
 
         <StyledTextField
             name="receiver.postCode"
-            label={english["postCode"]}
+            label={t("postCode")}
             type="text"
             value={formValues.postCode}
             onChange={handleChange}
@@ -47,15 +49,39 @@ const ReceiverFormPart = ({ formValues, handleChange }: ReceiverFormPartProps) =
 
         <StyledTextField
             name="receiver.city"
-            label={english["city"]}
+            label={t("city")}
             type="text"
             value={formValues.city}
             onChange={handleChange}
         />
 
         <StyledTextField
+            name="receiver.region"
+            label={t("region")}
+            type="text"
+            value={formValues.region}
+            onChange={handleChange}
+        />
+
+        <StyledTextField
+            name="receiver.district"
+            label={t("district")}
+            type="text"
+            value={formValues.district}
+            onChange={handleChange}
+        />
+
+        <StyledTextField
+            name="receiver.country"
+            label={t("country")}
+            type="text"
+            value={formValues.country}
+            onChange={handleChange}
+        />
+
+        <StyledTextField
             name="receiver.tel"
-            label={english["tel"]}
+            label={t("tel")}
             type="text"
             value={formValues.tel}
             onChange={handleChange}

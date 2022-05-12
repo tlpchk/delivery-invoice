@@ -8,6 +8,8 @@ const ReceiverSection = (data: ReceiverData) => {
         <SectionRow name="streetAndBuilding" value={data.streetAndBuilding}></SectionRow>
         <SectionRow name="postCode" value={data.postCode}></SectionRow>
         <SectionRow name="city" value={data.city}></SectionRow>
+        <SectionRow name="region" value={data.region}></SectionRow>
+        <SectionRow name="district" value={data.district}></SectionRow>
         <SectionRow name="country" value={data.country}></SectionRow>
         <SectionRow name="tel" value={data.tel}></SectionRow>
     </>

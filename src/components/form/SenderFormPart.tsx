@@ -1,5 +1,5 @@
 import { Grid, styled, TextField, Typography } from "@mui/material"
-import { english } from "../../data/dictionary"
+import { useTranslation } from "react-i18next"
 import { SenderFormData } from "../../store/declaration/types"
 
 interface SenderFromPartProps {
@@ -12,6 +12,8 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
 }));
 
 const SenderFormPart = ({ formValues, handleChange }: SenderFromPartProps) => {
+    const { t } = useTranslation()
+
     return (
         <Grid
             container
@@ -20,11 +22,11 @@ const SenderFormPart = ({ formValues, handleChange }: SenderFromPartProps) => {
             alignItems="left"
         >
 
-            <Typography variant="h6">{english["sender"]}</Typography>
+            <Typography variant="h6">{t("sender")}</Typography>
 
             <StyledTextField
                 name="sender.name"
-                label={english["name"]}
+                label={t("name")}
                 type="text"
                 value={formValues.name}
                 onChange={handleChange}
@@ -32,7 +34,7 @@ const SenderFormPart = ({ formValues, handleChange }: SenderFromPartProps) => {
 
             <StyledTextField
                 name="sender.streetAndBuilding"
-                label={english["streetAndBuilding"]}
+                label={t("streetAndBuilding")}
                 type="text"
                 value={formValues.streetAndBuilding}
                 onChange={handleChange}
@@ -41,7 +43,7 @@ const SenderFormPart = ({ formValues, handleChange }: SenderFromPartProps) => {
 
             <StyledTextField
                 name="sender.postCode"
-                label={english["postCode"]}
+                label={t("postCode")}
                 type="text"
                 value={formValues.postCode}
                 onChange={handleChange}
@@ -49,7 +51,7 @@ const SenderFormPart = ({ formValues, handleChange }: SenderFromPartProps) => {
 
             <StyledTextField
                 name="sender.city"
-                label={english["city"]}
+                label={t("city")}
                 type="text"
                 value={formValues.city}
                 onChange={handleChange}
@@ -57,7 +59,7 @@ const SenderFormPart = ({ formValues, handleChange }: SenderFromPartProps) => {
 
             <StyledTextField
                 name="sender.tel"
-                label={english["tel"]}
+                label={t("tel")}
                 type="text"
                 value={formValues.tel}
                 onChange={handleChange}

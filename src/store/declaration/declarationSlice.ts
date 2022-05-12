@@ -20,9 +20,11 @@ const initialState: DeclarationState = {
             streetAndBuilding: "",
             postCode: "",
             city: "",
+            region: "",
+            district: "",
+            country: "ITALY",
             tel: "",
             company: "Receiver's company",
-            country: "ITALY"
         },
         postalAdministration: "ITALY"
     },
