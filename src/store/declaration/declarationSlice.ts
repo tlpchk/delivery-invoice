@@ -12,7 +12,7 @@ const initialState: DeclarationState = {
             city: "",
             tel: "",
             company: "Sender's company",
-            senderRef: "9999999999",
+            senderRef: "",
             country: "ITALY"
         },
         receiver: {

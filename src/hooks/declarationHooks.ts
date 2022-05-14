@@ -18,11 +18,13 @@ Font.register({
 export const useRobotoFonts = () => (useEffect(() => {
     const loadFonts = async () => {
         await Promise.all([
-            Font.load({ fontFamily: 'Roboto' })
+            Font.load({ fontFamily: 'Roboto', fontWeight: 300 }),
+            Font.load({ fontFamily: 'Roboto', fontWeight: 500 }),
+            Font.load({ fontFamily: 'Roboto', fontWeight: 900 })
         ])
     }
     loadFonts()
-}, []))
+}))
 
 export const useScrollToTheBottom = (bool: boolean = true) => useEffect(() => {
     if (bool) {

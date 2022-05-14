@@ -1,4 +1,5 @@
 import { Grid, styled, TextField, Typography } from "@mui/material"
+import _ from "lodash"
 import { useTranslation } from "react-i18next"
 import { SenderFormData } from "../../store/declaration/types"
 
@@ -13,6 +14,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
 
 const SenderFormPart = ({ formValues, handleChange }: SenderFromPartProps) => {
     const { t } = useTranslation()
+    const fieldNames = _.keys(formValues)
 
     return (
         <Grid
@@ -21,49 +23,17 @@ const SenderFormPart = ({ formValues, handleChange }: SenderFromPartProps) => {
             justifyContent="center"
             alignItems="left"
         >
-
             <Typography variant="h6">{t("sender")}</Typography>
-
+            {fieldNames.map(name => (
             <StyledTextField
-                name="sender.name"
-                label={t("name")}
+                key={name}
+                name={`receiver.${name}`}
+                label={t(name)}
                 type="text"
-                value={formValues.name}
+                value={_.get(formValues, name)}
                 onChange={handleChange}
             />
-
-            <StyledTextField
-                name="sender.streetAndBuilding"
-                label={t("streetAndBuilding")}
-                type="text"
-                value={formValues.streetAndBuilding}
-                onChange={handleChange}
-            />
-
-
-            <StyledTextField
-                name="sender.postCode"
-                label={t("postCode")}
-                type="text"
-                value={formValues.postCode}
-                onChange={handleChange}
-            />
-
-            <StyledTextField
-                name="sender.city"
-                label={t("city")}
-                type="text"
-                value={formValues.city}
-                onChange={handleChange}
-            />
-
-            <StyledTextField
-                name="sender.tel"
-                label={t("tel")}
-                type="text"
-                value={formValues.tel}
-                onChange={handleChange}
-            />
+        ))}
         </Grid>
     )
 }

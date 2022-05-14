@@ -14,7 +14,6 @@ const LanguageSelect = () => {
     const [menuAnchor, setMenuAnchor] = useState<Element | null>(null);
 
     useEffect(() => {
-        console.log(selected)
         const changeLang = async () => {
            await i18next.changeLanguage(selected)
         }

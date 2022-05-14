@@ -32,7 +32,7 @@ const defaultValues: DeclarationFormData = {
 export const DeclarationForm = () => {
   const [formValues, setFormValues] = useState(defaultValues);
   const dispatch = useAppDispatch()
-  const {t} = useTranslation()
+  const { t } = useTranslation()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -46,7 +46,7 @@ export const DeclarationForm = () => {
 
   return (
     <Box sx={{ p: 2 }}>
-      <DeclarationHeader></DeclarationHeader>
+      <DeclarationHeader />
       <form onSubmit={handleSubmit}>
         <Grid container
           direction="row"
