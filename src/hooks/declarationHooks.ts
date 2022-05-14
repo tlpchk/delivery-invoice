@@ -1,13 +1,21 @@
 import { Font } from "@react-pdf/renderer"
 import { useEffect } from "react"
 
+
+import robotoBlack from "../assets/fonts/Roboto/Roboto-Black.ttf"
+import robotoMedium from "../assets/fonts/Roboto/Roboto-Medium.ttf"
+import robotoLight from "../assets/fonts/Roboto/Roboto-Light.ttf"
+
 Font.register({
     family: "Roboto",
-    src:
-        "https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-medium-webfont.ttf"
+    fonts: [
+        { src: robotoLight, fontWeight: 300 },
+        { src: robotoMedium, fontWeight: 500 },
+        { src: robotoBlack, fontWeight: 900 }
+    ]
 });
 
-export const useCyrilicFonts = () => (useEffect(() => {
+export const useRobotoFonts = () => (useEffect(() => {
     const loadFonts = async () => {
         await Promise.all([
             Font.load({ fontFamily: 'Roboto' })

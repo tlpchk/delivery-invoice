@@ -3,13 +3,13 @@ import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import { useTranslation } from "react-i18next"
 import { useAppSelector } from "../../store/hooks";
 import Declaration from "./Declaration";
-import { useCyrilicFonts, useScrollToTheBottom } from "./declarationHooks";
+import { useRobotoFonts, useScrollToTheBottom } from "../../hooks/declarationHooks";
 
 
 const DeclarationWrapper = () => {
     const { isPopulated, data } = useAppSelector((state) => state.declaration)
     const { t } = useTranslation()
-    useCyrilicFonts()
+    useRobotoFonts()
     useScrollToTheBottom(isPopulated)
 
     const Doc = <Declaration {...data} />
