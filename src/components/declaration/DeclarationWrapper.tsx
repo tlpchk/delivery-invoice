@@ -17,7 +17,7 @@ const DeclarationWrapper = () => {
     return isPopulated ? (
         <>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }} textAlign="center">
-                <PDFViewer width="1000" height="600" >
+                <PDFViewer width="80%" height="800px" >
                     {Doc}
                 </PDFViewer>
             </Box>

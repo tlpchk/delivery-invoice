@@ -28,24 +28,35 @@ export interface ReceiverData extends ReceiverFormData {
 }
 
 export interface ContentData {
-    contentsDesc: string
-    quantity: string
-    weight: string
-    value: string
+    contentsDesc?: string
+    quantity?: string
+    weight?: string
+    value?: string
     hsTariffNumber?: string
     countryOfOrigin?: string
 }
 
+export interface GeneralFormData {
+    declarationId: string
+}
+
+export interface GeneralData extends GeneralFormData {
+    agentCode: string
+    importerReference: string
+    importerContact: string
+}
 
 export interface DeclarationFormData {
     sender: SenderFormData
     receiver: ReceiverFormData
+    general: GeneralFormData
 }
 
 export interface DeclarationData extends DeclarationFormData {
     postalAdministration: string
     sender: SenderData
     receiver: ReceiverData
+    general: GeneralData
     contents: Array<ContentData>
 }
 

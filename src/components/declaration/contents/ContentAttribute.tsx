@@ -1,5 +1,5 @@
 import { Text } from "@react-pdf/renderer";
-import { declarationStyles } from "./Declaration";
+import { declarationStyles } from "../Declaration";
 
 interface ContentAttributeProps {
     value?: string

@@ -1,16 +1,13 @@
-import { Grid, styled, TextField, Typography } from "@mui/material"
+import { Grid, Typography } from "@mui/material"
 import _ from "lodash"
 import { useTranslation } from "react-i18next"
 import { ReceiverFormData } from "../../store/declaration/types"
+import StyledTextField from "./StyledTextField"
 
 interface ReceiverFormPartProps {
     formValues: ReceiverFormData
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
-
-const StyledTextField = styled(TextField)(({ theme }) => ({
-    margin: theme.spacing(2)
-}));
 
 const ReceiverFormPart = ({ formValues, handleChange }: ReceiverFormPartProps) => {
     const { t } = useTranslation()

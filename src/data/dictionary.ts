@@ -12,6 +12,7 @@ export const english: Dictionary = {
     "to": "To",
     "loadingInvoice": "Loading...",
     "download": "Download",
+    "general": "General data",
 
     "name": "Last name, First name",
     "postalAdministration": "Postal administration",
@@ -30,7 +31,13 @@ export const english: Dictionary = {
     "value": "Value (5)",
     "commercialsItemsOnly": "For commercial items only",
     "hsTariffNumber": "HS tariff number (7)",
-    "countryOfOrigin": "Country of origin of goods (8)"
+    "countryOfOrigin": "Country of origin of goods (8)",
+    "customsDeclaration": "CUSTOMS DECLARATION",
+    "declarationId": "No. of item (barcode, if any)",
+    "mayBeOpened": "May be opened officially",
+    "agentCode": "Agent Code",
+    "importerReference": "Importer's reference (if any) (tax code/VAT No./importer code) (optional)",
+    "importerContact": "Importer’s telephone/fax/e-mail (if known)"
 }
 
 export const ukrainian: Dictionary = {
@@ -40,6 +47,7 @@ export const ukrainian: Dictionary = {
     "receiver": "Отримувач",
     "loadingInvoice": "Обробка...",
     "download": "Завантажити",
+    "general": "Загальні дані",
 
     "name": "Прізвище, ім’я",
     "postalAdministration": "Поштова адміністрація",
@@ -58,5 +66,11 @@ export const ukrainian: Dictionary = {
     "value": "Вартість (5)",
     "commercialsItemsOnly": "Тільки для комерційних відправлень",
     "hsTariffNumber": "Код ТНЗЕД (7)",
-    "countryOfOrigin": "Країна походження товарів (8)"
+    "countryOfOrigin": "Країна походження товарів (8)",
+    "customsDeclaration": "МИТНА ДЕКЛАРАЦІЯ",
+    "declarationId": "№ відправлення (штриховий код, якщо є)",
+    "mayBeOpened": "Може бути розкрито у службовому порядку",
+    "agentCode": "Код агента",
+    "importerReference": "Реквізити імпортера (якщо є) (ідент. код/№ ПДВ/індекс імпортера) (факультативно)",
+    "importerContact": "№ телефону/факсу/e-mail імпортера (якщо відомий)"
 }

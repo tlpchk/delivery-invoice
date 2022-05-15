@@ -1,7 +1,7 @@
 import { View } from "@react-pdf/renderer";
-import { ContentData } from "../../store/declaration/types";
+import { ContentData } from "../../../store/declaration/types";
 import ContentAttribute from "./ContentAttribute";
-import Title from "./Title";
+import ContentsHeaderLabel from "./ContentsHeaderLabel";
 
 
 interface ContentsSectionProps {
@@ -12,19 +12,19 @@ const ContentsSection = ({ data: contents }: ContentsSectionProps) => (
     <>
         <View style={{ flexDirection: "row" }}>
             <View style={{ flexDirection: "row", flex: 14 }}>
-                <Title name={"contentsDesc"} flex={2} />
-                <Title name={"quantity"} flex={1} />
+                <ContentsHeaderLabel name={"contentsDesc"} flex={2} />
+                <ContentsHeaderLabel name={"quantity"} flex={1} />
             </View>
 
             <View style={{ flexDirection: "row", flex: 10 }}>
-                <Title name={"weight"} flex={1} />
-                <Title name={"value"} flex={1} />
+                <ContentsHeaderLabel name={"weight"} flex={1} />
+                <ContentsHeaderLabel name={"value"} flex={1} />
 
                 <View style={{ flex: 4 }}>
-                    <Title name={"commercialsItemsOnly"} />
+                    <ContentsHeaderLabel name={"commercialsItemsOnly"} />
                     <View style={{ flexDirection: "row" }}>
-                        <Title name={"hsTariffNumber"} flex={1} />
-                        <Title name={"countryOfOrigin"} flex={1} />
+                        <ContentsHeaderLabel name={"hsTariffNumber"} flex={1} />
+                        <ContentsHeaderLabel name={"countryOfOrigin"} flex={1} />
                     </View>
                 </View>
             </View>

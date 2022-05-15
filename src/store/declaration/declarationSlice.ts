@@ -12,7 +12,7 @@ const initialState: DeclarationState = {
             postCode: "",
             city: "",
             tel: "",
-            company: "Sender's company",
+            company: "",
             senderRef: "",
             country: "ITALY"
         },
@@ -25,7 +25,13 @@ const initialState: DeclarationState = {
             district: "",
             country: "ITALY",
             tel: "",
-            company: "Receiver's company",
+            company: "",
+        },
+        general:{
+            declarationId: "",
+            agentCode: " ",
+            importerReference: " ",
+            importerContact: " "
         },
         contents: [
             {
@@ -44,7 +50,10 @@ const initialState: DeclarationState = {
                 quantity: "3",
                 weight: "1",
                 value: "300",
-            }
+            },
+            { contentsDesc: " "},
+            { contentsDesc: " "},
+            { contentsDesc: " "},
         ]
     },
     isPopulated: false
