@@ -5,7 +5,7 @@ import Value from "./Value"
 
 const SenderSection = (data: SenderData) =>  (<>
         <View style={{ display: "flex", flexDirection: "row" }}>
-            <View style={{ flex: 3 }}>
+            <View style={{ flex: 2 }}>
                 <View style={[declarationStyles.outlined]}>
                     <Value name="name" value={data.name}></Value>
                 </View>
@@ -13,8 +13,8 @@ const SenderSection = (data: SenderData) =>  (<>
                     <Value name="company" value={data.company}></Value>
                 </View>
             </View>
-            <View style={[declarationStyles.outlined, { flex: 2 }]}>
-                <Value name="senderRef" value={data.senderRef} flexTitle={5} flexValue={1}></Value>
+            <View style={[declarationStyles.outlined, { flex: 1 }]}>
+                <Value name="senderRef" value={data.senderRef} flexTitle={2} flexValue={1}></Value>
             </View>
         </View>
         <View style={[declarationStyles.outlined]}>

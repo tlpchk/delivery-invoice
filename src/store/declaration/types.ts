@@ -23,9 +23,19 @@ export interface SenderData extends SenderFormData {
     country: string
 }
 
-export interface ReceiverData extends ReceiverFormData{
+export interface ReceiverData extends ReceiverFormData {
     company: string
 }
+
+export interface ContentData {
+    contentsDesc: string
+    quantity: string
+    weight: string
+    value: string
+    hsTariffNumber?: string
+    countryOfOrigin?: string
+}
+
 
 export interface DeclarationFormData {
     sender: SenderFormData
@@ -36,6 +46,7 @@ export interface DeclarationData extends DeclarationFormData {
     postalAdministration: string
     sender: SenderData
     receiver: ReceiverData
+    contents: Array<ContentData>
 }
 
 

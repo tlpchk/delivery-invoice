@@ -5,6 +5,7 @@ import { DeclarationFormData, DeclarationState } from "./types";
 
 const initialState: DeclarationState = {
     data: {
+        postalAdministration: "ITALY",
         sender: {
             name: "",
             streetAndBuilding: "",
@@ -26,7 +27,25 @@ const initialState: DeclarationState = {
             tel: "",
             company: "Receiver's company",
         },
-        postalAdministration: "ITALY"
+        contents: [
+            {
+                contentsDesc: "Опис 1",
+                quantity: "1",
+                weight: "3",
+                value: "100",
+            },
+            {
+                contentsDesc: "Опис 2",
+                quantity: "2",
+                weight: "2",
+                value: "200",
+            },            {
+                contentsDesc: "Опис 3",
+                quantity: "3",
+                weight: "1",
+                value: "300",
+            }
+        ]
     },
     isPopulated: false
     // status: 'idle',
