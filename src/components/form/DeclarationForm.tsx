@@ -52,23 +52,21 @@ export const DeclarationForm = () => {
     <Box sx={{ p: 2 }}>
       <DeclarationHeader />
       <form onSubmit={handleSubmit}>
-        <Grid container
-          direction="row"
-          alignItems="start"
-          sx={{ pt: 2 }}
-        >
+        <Grid container>
           <Grid item xs={12} sm={6}>
-            <GeneralFormPart
-              formValues={formValues.general}
-              handleChange={handleInputChange} />
-          </Grid>
+            <Grid container direction="column"  justifyContent="space-between" style={{ height: "100%" }}>
+              <Grid item>
+                <GeneralFormPart
+                  formValues={formValues.general}
+                  handleChange={handleInputChange} />
+              </Grid>
 
-          <Grid item xs={0} sm={6}/>
-
-          <Grid item xs={12} sm={6}>
-            <SenderFormPart
-              formValues={formValues.sender}
-              handleChange={handleInputChange} />
+              <Grid item>
+                <SenderFormPart
+                  formValues={formValues.sender}
+                  handleChange={handleInputChange} />
+              </Grid>
+            </Grid>
           </Grid>
 
           <Grid item xs={12} sm={6}>
@@ -77,7 +75,7 @@ export const DeclarationForm = () => {
               handleChange={handleInputChange} />
           </Grid>
         </Grid>
-        <Box textAlign="center">
+        <Box textAlign="center" sx={{ mt: 2 }}>
           <Button variant={"contained"} type="submit">
             {t("submit")}
           </Button>
