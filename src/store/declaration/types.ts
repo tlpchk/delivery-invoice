@@ -27,14 +27,16 @@ export interface ReceiverData extends ReceiverFormData {
     company: string
 }
 
-export interface ContentData {
-    contentsDesc?: string
-    quantity?: string
-    weight?: string
-    value?: string
-    hsTariffNumber?: string
-    countryOfOrigin?: string
+export interface ContentFormData {
+    contentsDesc: string
+    quantity: string
+    weight: string
+    value: string
+    hsTariffNumber: string
+    countryOfOrigin: string
 }
+
+export interface ContentData extends ContentFormData { }
 
 export interface GeneralFormData {
     declarationId: string
@@ -50,6 +52,7 @@ export interface DeclarationFormData {
     sender: SenderFormData
     receiver: ReceiverFormData
     general: GeneralFormData
+    contents: Array<ContentFormData>
 }
 
 export interface DeclarationData extends DeclarationFormData {

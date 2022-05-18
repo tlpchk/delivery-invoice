@@ -2,7 +2,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import _ from "lodash";
 import { DeclarationFormData, DeclarationState } from "./types";
 
-
 const initialState: DeclarationState = {
     data: {
         postalAdministration: "ITALY",
@@ -27,39 +26,17 @@ const initialState: DeclarationState = {
             tel: "",
             company: "",
         },
-        general:{
+        general: {
             declarationId: "",
             agentCode: " ",
             importerReference: " ",
             importerContact: " "
         },
-        contents: [
-            {
-                contentsDesc: "Опис 1",
-                quantity: "1",
-                weight: "3",
-                value: "100",
-            },
-            {
-                contentsDesc: "Опис 2",
-                quantity: "2",
-                weight: "2",
-                value: "200",
-            },            {
-                contentsDesc: "Опис 3",
-                quantity: "3",
-                weight: "1",
-                value: "300",
-            },
-            { contentsDesc: " "},
-            { contentsDesc: " "},
-            { contentsDesc: " "},
-        ]
+        contents: []
     },
     isPopulated: false
     // status: 'idle',
 };
-
 
 export const declarationSlice = createSlice({
     name: 'declaration',

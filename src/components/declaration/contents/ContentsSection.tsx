@@ -30,8 +30,8 @@ const ContentsSection = ({ data: contents }: ContentsSectionProps) => (
             </View>
         </View>
 
-        {contents.map(data => (
-            <View style={{ flexDirection: "row" }}>
+        {contents.map((data, idx) => (
+            <View key={idx} style={{ flexDirection: "row" }} >
                 <View style={{ flexDirection: "row", flex: 14 }}>
                     <ContentAttribute flex={2} value={data.contentsDesc} />
                     <ContentAttribute flex={1} value={data.quantity} />

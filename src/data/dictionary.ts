@@ -13,6 +13,9 @@ export const english: Dictionary = {
     "loadingInvoice": "Loading...",
     "download": "Download",
     "general": "General data",
+    "contents": "Contents",
+    "addContent": "Add content",
+    "removeContent": "Remove",
 
     "name": "Last name, First name",
     "postalAdministration": "Postal administration",
@@ -48,7 +51,10 @@ export const ukrainian: Dictionary = {
     "loadingInvoice": "Обробка...",
     "download": "Завантажити",
     "general": "Загальні дані",
-
+    "contents": "Зміст",
+    "addContent" : "Додати",
+    "removeContent": "Видалити",
+    
     "name": "Прізвище, ім’я",
     "postalAdministration": "Поштова адміністрація",
     "company": "Компанія/Фірма",
