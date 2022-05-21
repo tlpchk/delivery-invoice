@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import _ from "lodash";
-import { DeclarationFormData, DeclarationState } from "./types";
+import { Category, DeclarationFormData, DeclarationState } from "./types";
 
 const initialState: DeclarationState = {
     data: {
@@ -32,7 +32,8 @@ const initialState: DeclarationState = {
             importerReference: " ",
             importerContact: " "
         },
-        contents: []
+        contents: [],
+        category: Category.GIFT
     },
     isPopulated: false
     // status: 'idle',

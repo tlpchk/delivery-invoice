@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next"
 import {  setData } from "../../store/declaration/declarationSlice";
 import { useAppDispatch } from "../../store/hooks";
-import ContentsFormPart from "./contents/ContentsList";
+import ContentsFormPart from "./ContentsList";
 import DeclarationHeader from "./DeclarationHeader";
 import GeneralFormPart from "./GeneralFormPart";
 import ReceiverFormPart from "./ReceiverFormPart";

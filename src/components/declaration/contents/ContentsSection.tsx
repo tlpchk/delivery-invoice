@@ -1,7 +1,9 @@
 import { View } from "@react-pdf/renderer";
 import { ContentData } from "../../../store/declaration/types";
+import { declarationStyles } from "../Declaration";
 import ContentAttribute from "./ContentAttribute";
 import ContentsHeaderLabel from "./ContentsHeaderLabel";
+import ContentsSummary from "./ContentsSummary";
 
 
 interface ContentsSectionProps {
@@ -9,10 +11,10 @@ interface ContentsSectionProps {
 }
 
 const ContentsSection = ({ data: contents }: ContentsSectionProps) => (
-    <>
+    <View>
         <View style={{ flexDirection: "row" }}>
             <View style={{ flexDirection: "row", flex: 14 }}>
-                <ContentsHeaderLabel name={"contentsDesc"} flex={2} />
+                <ContentsHeaderLabel name={"contentsDesc"} flex={6} />
                 <ContentsHeaderLabel name={"quantity"} flex={1} />
             </View>
 
@@ -33,7 +35,7 @@ const ContentsSection = ({ data: contents }: ContentsSectionProps) => (
         {contents.map((data, idx) => (
             <View key={idx} style={{ flexDirection: "row" }} >
                 <View style={{ flexDirection: "row", flex: 14 }}>
-                    <ContentAttribute flex={2} value={data.contentsDesc} />
+                    <ContentAttribute flex={6} value={data.contentsDesc} />
                     <ContentAttribute flex={1} value={data.quantity} />
                 </View>
 
@@ -49,6 +51,29 @@ const ContentsSection = ({ data: contents }: ContentsSectionProps) => (
                 </View>
             </View>
         ))}
-    </>)
+
+        <View style={[declarationStyles.outlined, { flexDirection: "row" }]} >
+            <View style={{ flexDirection: "row", flex: 14 }} />
+
+            <View style={{ flexDirection: "row", flex: 10 }}>
+                <ContentsSummary
+                    flex={1}
+                    name={"totalWeight"}
+                    values={contents.map(c => Number(c.weight))}
+                    suffix=" kg"/>
+
+                <ContentsSummary
+                    flex={1}
+                    name={"totalPrice"}
+                    values={contents.map(c => Number(c.value))}
+                    suffix=" EUR"/>
+
+                <ContentsSummary
+                    flex={4}
+                    name={"postalFees"}/>
+            </View>
+        </View>
+    </View>
+)
 
 export default ContentsSection

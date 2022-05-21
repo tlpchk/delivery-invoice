@@ -3,8 +3,8 @@ import _ from "lodash"
 import { useTranslation } from "react-i18next"
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
-import { ContentFormData } from "../../../store/declaration/types"
-import { maxNoContents } from "../utils";
+import { ContentFormData } from "../../store/declaration/types"
+import { defaultContentValues, maxNoContents } from "./utils";
 
 interface ContentsFormPartProps {
     formValues: Array<ContentFormData>
@@ -15,7 +15,7 @@ interface ContentsFormPartProps {
 
 const ContentsFormPart = ({ formValues, handleChange, onAdd, onRemove }: ContentsFormPartProps) => {
     const { t } = useTranslation()
-    const fieldNames = formValues.length > 0 ? _.keys(formValues[0]) : []
+    const fieldNames = _.keys(defaultContentValues)
 
     return <Grid container
         direction="column"
@@ -26,7 +26,6 @@ const ContentsFormPart = ({ formValues, handleChange, onAdd, onRemove }: Content
     >
         <Grid item xs>
             <Grid container columnGap={2}>
-
                 <Typography variant="h6">{t("contents")}</Typography>
 
                 <Button

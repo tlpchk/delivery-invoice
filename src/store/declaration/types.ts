@@ -48,6 +48,14 @@ export interface GeneralData extends GeneralFormData {
     importerContact: string
 }
 
+export enum Category{
+    GIFT,
+    DOCUMENT,
+    COMMERCIAL_SAMPLE,
+    RETURNED_GOODS,
+    OTHER
+}
+
 export interface DeclarationFormData {
     sender: SenderFormData
     receiver: ReceiverFormData
@@ -61,6 +69,7 @@ export interface DeclarationData extends DeclarationFormData {
     receiver: ReceiverData
     general: GeneralData
     contents: Array<ContentData>
+    category: Category
 }
 
 
